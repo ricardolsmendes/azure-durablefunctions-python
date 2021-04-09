@@ -1,1 +1,1 @@
-# azure-durablefunction-python
+# azure-durablefunctions-python
