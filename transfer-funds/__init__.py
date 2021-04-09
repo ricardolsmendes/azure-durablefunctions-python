@@ -5,7 +5,7 @@ import azure.durable_functions as df
 
 
 def orchestrator_function(context: df.DurableOrchestrationContext):
-    result1 = yield context.call_activity('read-input')
+    result1 = yield context.call_activity('read-request-data')
     result2 = yield context.call_activity('validate-input')
     result3 = yield context.call_activity('handle-funds-transfer')
     return [result1, result2, result3]
