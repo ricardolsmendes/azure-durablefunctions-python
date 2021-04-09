@@ -1,4 +1,4 @@
-func new --name orchestrator --template "Durable Functions orchestrator"
+func new --name transfer-funds --template "Durable Functions orchestrator"
 func new --name read-input --template "Durable Functions activity"
 func new --name validate-input --template "Durable Functions activity"
 func new --name transfer-funds --template "Durable Functions activity"
