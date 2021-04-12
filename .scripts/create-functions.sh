@@ -1,3 +1,5 @@
+cd azure-durablefunctions-python || exit
+
 func new --name transfer-funds --template "Durable Functions orchestrator"
 
 func new --name read-request-data --template "Durable Functions activity"
