@@ -5,10 +5,23 @@ import azure.durable_functions as df
 
 
 def orchestrator_function(context: df.DurableOrchestrationContext):
-    result1 = yield context.call_activity('read-request-data')
-    result2 = yield context.call_activity('validate-input')
-    result3 = yield context.call_activity('handle-funds-transfer')
-    return [result1, result2, result3]
+    output = []
+
+    funds_transfer_data = yield context.call_activity('get-funds-transfer-data')
+    output.append('Get funds transfer data: DONE')
+
+    """    
+    yield context.call_activity('validate-input', funds_transfer_data)
+    output.append('Validate input: DONE')
+
+    yield context.call_activity('validate-internal-account', funds_transfer_data)
+    output.append('Validate internal account: DONE')
+
+    yield context.call_activity('handle-funds-transfer', funds_transfer_data)
+    output.append('Handle funds transfer: DONE')
+    """
+
+    return output
 
 
 main = df.Orchestrator.create(orchestrator_function)

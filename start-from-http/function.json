@@ -8,8 +8,7 @@
       "direction": "in",
       "route": "{functionName}",
       "methods": [
-        "post",
-        "get"
+        "post"
       ]
     },
     {
