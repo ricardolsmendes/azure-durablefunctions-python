@@ -17,10 +17,8 @@ def orchestrator_function(context: df.DurableOrchestrationContext):
         yield context.call_activity('validate-internal-account', transfer)
         output.append('Validate internal account: DONE')
 
-    """    
     yield context.call_activity('handle-funds-transfer', transfer)
     output.append('Handle funds transfer: DONE')
-    """
 
     return output
 
