@@ -1,2 +1,2 @@
-# Create the Function App
+# Initialize the Function App
 func init azure-durablefunctions-python --python
