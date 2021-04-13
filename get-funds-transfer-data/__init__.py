@@ -2,9 +2,9 @@
 # triggered by an orchestrator function.
 
 import time
-from typing import Dict, Optional
+from typing import Dict
 
 
-def main(body: Dict[str, object]) -> Optional[object]:
+def main(body: Dict[str, object]) -> Dict[str, object]:
     time.sleep(2)
     return body.get('fundsTransfer') if body else {}
