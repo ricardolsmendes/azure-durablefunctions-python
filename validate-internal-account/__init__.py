@@ -2,10 +2,10 @@
 # triggered by an orchestrator function.
 
 import time
-from typing import Dict
+from typing import Any, Dict
 
 
-def main(transfer: Dict[str, object]) -> bool:
+def main(transfer: Dict[str, Any]) -> bool:
     time.sleep(2)
     # Internal Accounts validation logic should be added here.
     return True
