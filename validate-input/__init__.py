@@ -5,7 +5,7 @@ import time
 from typing import Any, Dict
 
 
-def main(transfer: Dict[str, Any]) -> bool:
+def main(transfer: Dict[str, Any]) -> Dict[str, Any]:
     time.sleep(2)
 
     if not transfer:
@@ -17,4 +17,4 @@ def main(transfer: Dict[str, Any]) -> bool:
     if not transfer.get('targetAccount'):
         raise Exception('The Target Account is mandatory')
 
-    return True
+    return transfer
