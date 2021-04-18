@@ -7,7 +7,8 @@ import azure.durable_functions as df
 def orchestrator_function(context: df.DurableOrchestrationContext):
     output = []
 
-    data = yield context.call_activity('get-funds-transfer-data', context.get_input())
+    request_body = context.get_input()
+    data = yield context.call_activity('get-funds-transfer-data', request_body)
     output.append('Get funds transfer data: DONE')
 
     yield context.call_activity('validate-input', data)
