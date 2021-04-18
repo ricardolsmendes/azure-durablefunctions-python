@@ -5,16 +5,19 @@ import time
 from typing import Any, Dict
 
 
-def main(data: Dict[str, Any]) -> Dict[str, Any]:
+# Using `transfer` as the parameter name because `data` causes a
+# `Microsoft.Azure.WebJobs.Host: Can't bind parameter 'data' to type 'System.String'.` error.
+# https://github.com/Azure/Azure-Functions/issues/1281 for reference.
+def main(transfer: Dict[str, Any]) -> Dict[str, Any]:
     time.sleep(2)
 
-    if not data:
+    if not transfer:
         raise Exception('The funds transfer data is mandatory')
 
-    if not data.get('sourceAccount'):
+    if not transfer.get('sourceAccount'):
         raise Exception('The Source Account is mandatory')
 
-    if not data.get('targetAccount'):
+    if not transfer.get('targetAccount'):
         raise Exception('The Target Account is mandatory')
 
-    return data
+    return transfer

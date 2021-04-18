@@ -2,7 +2,7 @@
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "name": "data",
+      "name": "transfer",
       "type": "activityTrigger",
       "direction": "in"
     }

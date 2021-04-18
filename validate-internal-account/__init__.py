@@ -5,7 +5,10 @@ import time
 from typing import Any, Dict
 
 
-def main(data: Dict[str, Any]) -> Dict[str, Any]:
+# Using `transfer` as the parameter name because `data` causes a
+# `Microsoft.Azure.WebJobs.Host: Can't bind parameter 'data' to type 'System.String'.` error.
+# https://github.com/Azure/Azure-Functions/issues/1281 for reference.
+def main(transfer: Dict[str, Any]) -> Dict[str, Any]:
     time.sleep(2)
     # Internal Accounts validation logic should be added here.
-    return data
+    return transfer
