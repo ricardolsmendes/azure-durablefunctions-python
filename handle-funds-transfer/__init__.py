@@ -5,8 +5,8 @@ import time
 from typing import Any, Dict
 
 
-def main(transfer: Dict[str, Any]) -> Dict[str, Any]:
+def main(data: Dict[str, Any]) -> Dict[str, Any]:
     time.sleep(2)
     # The actual funds transfer logic, such as moving money from the source to the target account
     # should be added here.
-    return transfer
+    return data

@@ -5,16 +5,16 @@ import time
 from typing import Any, Dict
 
 
-def main(transfer: Dict[str, Any]) -> Dict[str, Any]:
+def main(data: Dict[str, Any]) -> Dict[str, Any]:
     time.sleep(2)
 
-    if not transfer:
+    if not data:
         raise Exception('The funds transfer data is mandatory')
 
-    if not transfer.get('sourceAccount'):
+    if not data.get('sourceAccount'):
         raise Exception('The Source Account is mandatory')
 
-    if not transfer.get('targetAccount'):
+    if not data.get('targetAccount'):
         raise Exception('The Target Account is mandatory')
 
-    return transfer
+    return data

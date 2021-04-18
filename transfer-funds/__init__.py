@@ -7,17 +7,17 @@ import azure.durable_functions as df
 def orchestrator_function(context: df.DurableOrchestrationContext):
     output = []
 
-    transfer = yield context.call_activity('get-funds-transfer-data', context.get_input())
+    data = yield context.call_activity('get-funds-transfer-data', context.get_input())
     output.append('Get funds transfer data: DONE')
 
-    yield context.call_activity('validate-input', transfer)
+    yield context.call_activity('validate-input', data)
     output.append('Validate input: DONE')
 
-    if transfer['sourceAccount']['bankId'] == transfer['targetAccount']['bankId']:
-        yield context.call_activity('validate-internal-account', transfer)
+    if data['sourceAccount']['bankId'] == data['targetAccount']['bankId']:
+        yield context.call_activity('validate-internal-account', data)
         output.append('Validate internal account: DONE')
 
-    yield context.call_activity('handle-funds-transfer', transfer)
+    yield context.call_activity('handle-funds-transfer', data)
     output.append('Handle funds transfer: DONE')
 
     return output

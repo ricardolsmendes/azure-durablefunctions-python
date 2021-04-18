@@ -7,4 +7,4 @@ from typing import Any, Dict
 
 def main(body: Dict[str, Any]) -> Dict[str, Any]:
     time.sleep(2)
-    return body.get('fundsTransfer') if body else {}
+    return body.get('data') if body else {}
