@@ -36,7 +36,8 @@ Main characteristics:
    ```shell
    func azure functionapp publish <YOUR-FUNCTION-NAME>
    ```
-   _The HTTP URI will be displayed at the end of the publishing logs._
+   _The HTTP URI will be displayed at the end of the publishing logs — replace `{functionName}`
+   with `transfer-funds`._
    
 1. Use [Postman](https://www.postman.com) or equivalent tool to make requests and see it in
    action. Please use the below content as a reference request body:
