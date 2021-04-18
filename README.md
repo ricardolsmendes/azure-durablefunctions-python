@@ -5,6 +5,23 @@ reduce the burden when managing long-living serverless workloads** blog post.
 
 > Note: both the blog post and this repo are work in progress!
 
+## Sample application
+
+The sample Funds Transfer App comprises 4 business steps, each of them implemented as an
+Azure Function:
+
+![N|Solid](.diagrams/workloads-funds-transfer.png
+"The sample Funds Transfer App using Azure Durable Functions")
+
+Main characteristics:
+1. `get-funds-transfer-data` returns a value to the orchestrator; 
+
+1. `get-funds-transfer-data`, `validate-input`, and `handle-funds-transfer` are mandatory and must
+   run in this order;
+   
+1. `validate-internal-account` is optional can execute between `validate-input` and
+   `handle-funds-transfer` under certain conditions.
+
 ## Quickstart guide
 
 1. Create an Azure Function using the Azure Portal.
