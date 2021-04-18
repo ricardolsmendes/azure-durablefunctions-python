@@ -7,7 +7,7 @@ reduce the burden when managing long-living serverless workloads** blog post.
 
 ## Sample application
 
-The sample Funds Transfer App comprises 4 business steps, each of them implemented as an
+The dummy Funds Transfer App comprises 4 business steps, each of them implemented as an
 Azure Function:
 
 ![N|Solid](.diagrams/workloads-funds-transfer.png
@@ -32,18 +32,18 @@ Main characteristics:
    cd azure-durablefunctions-python
    ```
 
-1. Publish the Durable Functions:
+1. Publish the Azure Function:
    ```shell
    func azure functionapp publish <YOUR-FUNCTION-NAME>
    ```
-   The HTTP URI will be displayed at the end of the publishing logs.
+   _The HTTP URI will be displayed at the end of the publishing logs._
    
 1. Use [Postman](https://www.postman.com) or equivalent tool to make requests and see it in
    action. Please use the below content as a reference request body:
    ```json
     {
       "metadata": {
-        "requestId": "6d79dbfb-0e37-4fc4-981f-442c9ca65760",
+        "requestId": "6d79dbfb",
         "requestType": "fundsTransfer"
       },
       "data": {
@@ -58,5 +58,8 @@ Main characteristics:
       }
     }
    ```
-   The validation errors and optional execution path can be activated by suppressing and/or
-   changing the `data` content.
+   This will result in successful execution. The validation errors and optional execution path
+   can be activated by applying slight changes to it:
+   - remove `data`, `data.sourceAccount`, or `data.targerAccount` to see the validation errors;
+   - change `data.targetAccount.bankId` to `001` to run `validate-internal-account` in a given
+     workflow.
