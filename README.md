@@ -29,11 +29,11 @@ Main characteristics:
 1. Clone this repo:
    ```shell
    git clone https://github.com/ricardolsmendes/azure-durablefunctions-python.git
-   cd azure-durablefunctions-python
    ```
 
 1. Publish the Azure Function:
    ```shell
+   cd azure-durablefunctions-python || exit
    func azure functionapp publish <YOUR-FUNCTION-NAME>
    ```
    _The HTTP URI will be displayed at the end of the publishing logs — replace `{functionName}`
