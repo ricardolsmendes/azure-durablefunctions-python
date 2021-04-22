@@ -1,9 +1,15 @@
 # azure-durablefunctions-python
 
-Companion repository for the **How to chain Azure Functions and leverage Durable Functions to
-reduce the burden when managing long-living serverless workloads** blog post.
+Companion repository for the **[How to chain Azure Functions and leverage Durable Functions to
+reduce the burden when managing long-living serverless workloads](https://medium.com/ci-t/how-to-chain-azure-functions-c11da1048353)**
+blog post, addressing technical facets of microservices orchestration under the Microsoft Azure
+umbrella with [Azure Functions](https://azure.microsoft.com/en-us/blog/introducing-azure-functions)
+and [Durable Functions](https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview?tabs=python).
 
-> Note: both the blog post and this repo are work in progress!
+The blog post brings implementation details that hopefully will help developers thrive when working
+with the [Function Chaining](https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview?tabs=python#chaining)
+and [Async HTTP APIs](https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview?tabs=python#async-http)
+application patterns.
 
 ## Sample application
 
